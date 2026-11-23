@@ -1,0 +1,338 @@
+:: StoryTitle
+El humedal
+
+
+:: StoryData
+{
+  "ifid": "8D107451-8E2B-40D6-846F-65B01AD32DAF",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Inicio",
+  "tag-colors": {
+    "piso1": "green",
+    "piso2": "green",
+    "piso3": "green",
+    "meta": "yellow"
+  },
+  "zoom": 1
+}
+
+
+:: Como Jugar [piso2] {"position":"1100,550","size":"100,100"}
+{
+<div class="tarjeta">
+  <span class="etiqueta">Reglamento interactivo</span>
+  <h2>¿Cómo se juega?</h2>
+
+  <div class="caja-dato">
+    <p><strong>Participantes:</strong> De 2 a 4 jugadores (o en equipos de dos personas).</p>
+    <p><strong>Punto de partida:</strong> Cada jugador elige su ficha y la coloca en la <strong>Casilla 1 (Inicio – 1986)</strong>.</p>
+    <p><strong>En tu turno:</strong> Lanza el dado y avanza en sentido de las agujas del reloj alrededor de las cuatro caras de cada piso.</p>
+  </div>
+
+  <p>Toca cada sección para revisar las reglas antes de empezar:</p>
+
+  <div class="botones">
+    [[1. Tipos de casillas ->Reglas - Casillas]]
+    [[2. Enredaderas, ductos y cambio de piso ->Reglas - Dinamicas]]
+    [[3. ¿Cómo se gana? ->Reglas - Meta]]
+    [[▶ ¡Ya entendimos! Ir a la pantalla de inicio de partida ->Listos para jugar]]
+  </div>
+</div>
+}
+
+
+:: Inicio [piso1] {"position":"825,400","size":"100,100"}
+{
+<div class="tarjeta">
+  <span class="etiqueta">Guía previa al tablero • 1986 – 1991</span>
+  <h1>El humedal que no se dejó tapar</h1>
+  <img src="imagenes/casilla6.jpg" class="imagen-escena" alt="Elena defendiendo el humedal">
+
+  <p>Bienvenidos al juego de mesa sobre la defensa del humedal y el cambio que trajo la <strong>Constitución Política de Colombia de 1991</strong>.</p>
+  <p>En menos de dos minutos conocerán el origen de la historia y las reglas clave antes de lanzar el dado en la <strong>Casilla 1</strong>.</p>
+
+  <div class="botones">
+    [[▶ Leer el prólogo (1986)->Prologo 1986]]
+    [[📖 Ir directo a cómo se juega->Como Jugar]]
+  </div>
+</div>
+}
+
+
+:: Listos para jugar [meta] {"position":"1100,800","size":"100,100"}
+{
+<div class="tarjeta">
+  <span class="etiqueta">Piso 4 • Humedal Protegido</span>
+  <h2>¡A la mesa!</h2>
+  <img src="imagenes/meta.jpg" class="imagen-escena" alt="Humedal recuperado">
+
+  <p>Antes de empezar, revisen rápidamente su tablero físico:</p>
+
+  <div class="caja-dato">
+    <p>✓ Todas las fichas están ubicadas en la <strong>Casilla 1 (1986)</strong>.</p>
+    <p>✓ Las tarjetas de desafío y trampa están listas a un lado del tablero.</p>
+    <p>✓ Tienen el dado a la mano para decidir quién lanza primero.</p>
+  </div>
+
+  <p><strong>Ahora dejen el celular a un lado.</strong> El humedal no se salvó solo: ¡lancen el dado y comiencen su ascenso hacia 1991!</p>
+
+  <div class="botones">
+    [[📖 Consultar las reglas de nuevo->Como Jugar]]
+    [[🔄 Volver a la portada->Inicio]]
+  </div>
+</div>
+}
+
+
+:: Los Tres Pisos [piso2] {"position":"1225,425","size":"100,100"}
+{
+<div class="tarjeta">
+  <span class="etiqueta">Estructura del tablero</span>
+  <h2>Un ascenso por la historia</h2>
+  <img src="imagenes/casilla15.jpg" class="imagen-escena" alt="Movilización comunitaria por el humedal">
+
+  <p>La pirámide de <strong>30 casillas</strong> representa tres momentos reales de la lucha del barrio. A medida que suben de piso, cambia el color del tablero y cambia el poder de la comunidad:</p>
+
+  <div class="caja-dato">
+    <p><strong>Piso 1 — 1986 (Casillas 1 a 10 • Sepia):</strong> El abandono y las puertas cerradas. La burocracia y los vacíos legales frenan cualquier reclamo.</p>
+    <p><strong>Piso 2 — 1988 a 1990 (Casillas 11 a 20 • Verde oliva):</strong> Crisis y despertar comunitario. Llegan carrotanques con químicos que enferman a los niños, pero el barrio pierde el miedo, se une y se planta frente a las volquetas.</p>
+    <p><strong>Piso 3 — 1991 (Casillas 21 a 30 • Turquesa):</strong> Llega la Constitución de 1991. Con derechos colectivos y la acción de tutela —como la que Elena y Marta redactan para salvar al pequeño Mateo—, la comunidad por fin gana en los juzgados.</p>
+  </div>
+
+  <div class="botones">
+    [[Ver cómo se juega ->Como Jugar]]
+    [[⬅ Volver al prólogo->Prologo 1986]]
+  </div>
+</div>
+}
+
+
+:: Prologo 1986 [piso1] {"position":"1100,425","size":"100,100"}
+{
+<div class="tarjeta">
+  <span class="etiqueta">Prólogo • 1986 • Piso 1</span>
+  <h2>El amanecer de las volquetas</h2>
+  <img src="imagenes/casilla6.jpg" class="imagen-escena" alt="Don Aurelio y sus volquetas">
+
+  <p>Una mañana de 1986, el ruido de unas volquetas dando reversa despertó a <strong>Elena</strong>. Al llegar al borde del humedal del barrio, vio escombros, ladrillos rotos y basura cayendo directo sobre el agua. Al frente de los camiones estaba <strong>don Aurelio</strong>.</p>
+
+  <div class="dialogo">—¡Oiga, don Aurelio! Esto es un humedal, no un botadero de basura —reclamó Elena.</div>
+  <div class="dialogo">—No arme un problema por un charco lleno de zancudos —respondió él—. Cuando la tierra esté plana, aquí se construyen casas. Esto es progreso.</div>
+
+  <p>Elena reunió firmas con los vecinos en la Junta de Acción Comunal, pero en el juzgado le cerraron la puerta por no ser dueña del terreno y su carta en la Alcaldía quedó sin respuesta. Así comienza tu recorrido.</p>
+
+  <div class="botones">
+    [[Conocer los 3 pisos de la pirámide ->Los Tres Pisos]]
+    [[⬅ Volver al inicio->Inicio]]
+  </div>
+</div>
+}
+
+
+:: Reglas - Casillas [piso1] {"position":"975,550","size":"100,100"}
+{
+<div class="tarjeta">
+  <span class="etiqueta">Reglas • 1 de 3</span>
+  <h2>Tipos de casillas</h2>
+  <img src="imagenes/casilla3.jpg" class="imagen-escena" alt="Trampa burocrática de 1986">
+
+  <div class="caja-dato">
+    <p><strong>Casillas libres:</strong> Tu ficha se queda en esa posición y pasa el turno al siguiente jugador.</p>
+    <p><strong>Casillas de caso o desafío:</strong> Tomas la tarjeta correspondiente, lees en voz alta la situación del frente y eliges cómo actuar. Al voltearla descubres el resultado al instante: si aciertas, avanzas o subes por una enredadera; si fallas, retrocedes o pierdes turno.</p>
+    <p><strong>Casillas de trampa directa:</strong> Representan bloqueos inevitables de la época (como el rechazo en el juzgado en 1986). Lees la tarjeta y cumples de inmediato la consecuencia.</p>
+  </div>
+
+  <div class="botones">
+    [[Siguiente: Enredaderas y ductos ->Reglas - Dinamicas]]
+    [[⬅ Volver al menú de reglas->Como Jugar]]
+  </div>
+</div>
+}
+
+
+:: Reglas - Dinamicas [piso2] {"position":"1100,675","size":"100,100"}
+{
+<div class="tarjeta">
+  <span class="etiqueta">Reglas • 2 de 3</span>
+  <h2>Enredaderas, ductos y niveles</h2>
+  <img src="imagenes/casilla13.jpg" class="imagen-escena" alt="Elena tomando fotografías de denuncia">
+
+  <p>El tablero reinterpreta el clásico <em>escaleras y serpientes</em> con elementos de la historia del humedal:</p>
+
+  <div class="caja-dato">
+    <p><strong>Enredaderas (avances):</strong> Reemplazan a las escaleras. Simbolizan la unión del barrio, las pruebas bien presentadas y el uso correcto de las herramientas constitucionales.</p>
+    <p><strong>Ductos de contaminación y trampas legales (retrocesos):</strong> Reemplazan a las serpientes. Representan la burocracia, los permisos irregulares y los vertimientos químicos.</p>
+    <p><strong>Cambio de nivel:</strong> Al superar la <strong>Casilla 10</strong> subes al Piso 2 (1988–1990) y al superar la <strong>Casilla 20</strong> subes al Piso 3 (1991). También puedes subir antes si aciertas un desafío conectado a una enredadera.</p>
+  </div>
+
+  <div class="botones">
+    [[Siguiente: ¿Cómo se gana? ->Reglas - Meta]]
+    [[⬅ Volver al menú de reglas->Como Jugar]]
+  </div>
+</div>
+}
+
+
+:: Reglas - Meta [piso1] {"position":"1225,675","size":"100,100"}
+{
+<div class="tarjeta">
+  <span class="etiqueta">Reglas • 3 de 3</span>
+  <h2>Objetivo y victoria</h2>
+  <img src="imagenes/casilla22.jpg" class="imagen-escena" alt="Elena levantando la Constitución de 1991">
+
+  <div class="caja-dato">
+    <p><strong>¿Cómo se gana?</strong> Gana el primer jugador que logre superar la <strong>Casilla 30</strong> y llegar a la plataforma superior: <strong>Humedal Protegido</strong>, recibiendo el <em>Certificado de Veedor Ambiental</em>.</p>
+    <p><strong>Lo que aprenderán jugando:</strong> No se trata de memorizar artículos, sino de ponerse en los zapatos de Elena y el barrio para reconocer cuándo usar el <strong>derecho de petición</strong>, los <strong>derechos colectivos</strong> y la <strong>acción de tutela</strong>.</p>
+  </div>
+
+  <div class="botones">
+    [[▶ ¡Listos para jugar! ->Listos para jugar]]
+    [[⬅ Volver al menú de reglas->Como Jugar]]
+  </div>
+</div>
+}
+
+
+:: StoryStylesheet [stylesheet]
+/* Estilo base de toda la historia */
+tw-story {
+  background-color: #625042;
+  color: #2b2119;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Tarjeta principal tipo viñeta de cómic */
+.tarjeta {
+  background-color: #E1D0BD;
+  border: 4px solid #705E50;
+  border-radius: 10px;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 25px;
+}
+
+/* Etiqueta superior del año o sección */
+.etiqueta {
+  display: inline-block;
+  background-color: #705E50;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+h1, h2 {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+/* Ilustración vertical 3:4 del tablero */
+.imagen-escena {
+  display: block;
+  width: 65%;
+  max-width: 280px;
+  height: auto;
+  margin: 15px auto 20px auto;
+  border: 4px solid #2b2119;
+  border-radius: 6px;
+}
+
+/* Bloques de diálogo o notas destacadas */
+.dialogo {
+  border-left: 4px solid #705E50;
+  padding-left: 12px;
+  margin: 12px 0;
+  font-style: italic;
+}
+
+.caja-dato {
+  background-color: rgba(255, 255, 255, 0.45);
+  border-radius: 6px;
+  padding: 12px 15px;
+  margin: 14px 0;
+}
+
+/* Botones de navegación (uno debajo del otro) */
+.botones {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 2px dashed rgba(0, 0, 0, 0.2);
+}
+
+.botones tw-link {
+  display: block;
+  background-color: #705E50;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.botones tw-link:hover {
+  opacity: 0.85;
+}
+
+/* =======================================
+   CAMBIO DE PALETA SEGÚN EL PISO (TAGS)
+   ======================================= */
+
+/* PISO 2 — 1988 a 1990 (Verde oliva) */
+tw-story[tags~="piso2"] {
+  background-color: #3a4630;
+  color: #1f2619;
+}
+tw-story[tags~="piso2"] .tarjeta {
+  background-color: #e3e8da;
+  border-color: #556646;
+}
+tw-story[tags~="piso2"] .etiqueta,
+tw-story[tags~="piso2"] .botones tw-link {
+  background-color: #556646;
+}
+tw-story[tags~="piso2"] .dialogo {
+  border-left-color: #556646;
+}
+
+/* PISO 3 — 1991 (Turquesa luminoso) */
+tw-story[tags~="piso3"] {
+  background-color: #0f697a;
+  color: #0e2e36;
+}
+tw-story[tags~="piso3"] .tarjeta {
+  background-color: #e3f8fb;
+  border-color: #15899e;
+}
+tw-story[tags~="piso3"] .etiqueta,
+tw-story[tags~="piso3"] .botones tw-link {
+  background-color: #15899e;
+}
+tw-story[tags~="piso3"] .dialogo {
+  border-left-color: #15899e;
+}
+
+/* PISO 4 — META (Humedal Protegido) */
+tw-story[tags~="meta"] {
+  background-color: #0c5766;
+  color: #0e2e36;
+}
+tw-story[tags~="meta"] .tarjeta {
+  background-color: #f2fdfc;
+  border-color: #d4a017;
+}
+tw-story[tags~="meta"] .etiqueta {
+  background-color: #d4a017;
+  color: #1c1917;
+}
+tw-story[tags~="meta"] .botones tw-link {
+  background-color: #0f766e;
+}
