@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Certificado — Guardián del Humedal (1991)</title>
+  <title>Certificado — Tierra de Todos: Artículo 79</title>
   <style>
     * {
       box-sizing: border-box;
@@ -122,10 +122,10 @@
 
     .encabezado {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 2.2px;
+      letter-spacing: 2px;
       color: #0f697a;
       margin-bottom: 10px;
     }
@@ -323,7 +323,7 @@
         <rect x="71" y="37" width="6" height="15" rx="3" transform="rotate(14 74 44)" fill="#7c502b"/>
       </svg>
 
-      <p class="encabezado">Salvando el humedal — Bogotá, 1991</p>
+      <p class="encabezado">Tierra de Todos: Artículo 79 — Bogotá, 1991</p>
       <h1 class="titulo">GUARDIÁN DEL HUMEDAL</h1>
       <div class="divisor"></div>
 
@@ -470,8 +470,8 @@
       // Encabezado
       ctx.textAlign = 'center';
       ctx.fillStyle = '#0f697a';
-      ctx.font = 'bold 24px Arial, Helvetica, sans-serif';
-      ctx.fillText('SALVANDO EL HUMEDAL — BOGOTÁ, 1991', 540, 355);
+      ctx.font = 'bold 22px Arial, Helvetica, sans-serif';
+      ctx.fillText('TIERRA DE TODOS: ARTÍCULO 79 — BOGOTÁ, 1991', 540, 355);
 
       // Título
       ctx.fillStyle = '#163035';
@@ -570,8 +570,8 @@
       // Descarga
       const link = document.createElement('a');
       link.download = nombre
-        ? 'guardian-del-humedal-' + nombre.toLowerCase().replace(/[^a-z0-9]+/gi, '-') + '.png'
-        : 'certificado-guardian-del-humedal.png';
+        ? 'tierra-de-todos-guardian-' + nombre.toLowerCase().replace(/[^a-z0-9]+/gi, '-') + '.png'
+        : 'certificado-tierra-de-todos-art79.png';
       link.href = canvas.toDataURL('image/png');
       link.click();
     });

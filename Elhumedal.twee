@@ -46,10 +46,10 @@ El humedal
 {
 <div class="tarjeta">
   <span class="etiqueta">Guía previa al tablero • 1986 – 1991</span>
-  <h1>El humedal que no se dejó tapar</h1>
-  <img src="imagenes/casilla6.jpg" class="imagen-escena" alt="Elena defendiendo el humedal">
+  <h1>Tierra de Todos: Artículo 79</h1>
+  <img src="images/inicio.jpg" class="imagen-escena" alt="Elena frente al humedal en 1986">
 
-  <p>Bienvenidos al juego de mesa sobre la defensa del humedal y el cambio que trajo la <strong>Constitución Política de Colombia de 1991</strong>.</p>
+  <p>Bienvenidos a <strong>Tierra de Todos: Artículo 79</strong>, el juego de mesa sobre la defensa comunitaria del humedal y el cambio que trajo la <strong>Constitución Política de Colombia de 1991</strong>.</p>
   <p>En menos de dos minutos conocerán el origen de la historia y las reglas clave antes de lanzar el dado en la <strong>Casilla 1</strong>.</p>
 
   <div class="botones">
@@ -135,11 +135,12 @@ El humedal
 <div class="tarjeta">
   <span class="etiqueta">Reglas • 1 de 3</span>
   <h2>Tipos de casillas</h2>
-  <img src="imagenes/casilla3.jpg" class="imagen-escena" alt="Trampa burocrática de 1986">
+  <img src="images/casilla3.jpg" class="imagen-escena" alt="Trampa burocrática de 1986">
 
   <div class="caja-dato">
     <p><strong>Casillas libres:</strong> Tu ficha se queda en esa posición y pasa el turno al siguiente jugador.</p>
     <p><strong>Casillas de caso o desafío:</strong> Tomas la tarjeta correspondiente, lees en voz alta la situación del frente y eliges cómo actuar. Al voltearla descubres el resultado al instante: si aciertas, avanzas o subes por una enredadera; si fallas, retrocedes o pierdes turno.</p>
+    <p><strong>Regla de ronda repetida:</strong> Si en la misma ronda otro jugador cae en una casilla de desafío que alguien ya respondió, esa casilla cuenta como <strong>casilla libre</strong> (se queda ahí y pasa el turno), pues la respuesta ya fue revelada.</p>
     <p><strong>Casillas de trampa directa:</strong> Representan bloqueos inevitables de la época (como el rechazo en el juzgado en 1986). Lees la tarjeta y cumples de inmediato la consecuencia.</p>
   </div>
 
