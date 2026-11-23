@@ -197,6 +197,65 @@ El humedal
 }
 
 
+:: StoryScript [script]
+// 1. Cargar archivos de audio desde la carpeta "audios/"
+var sonidoPagina = new Audio('audios/pagina.mp3');
+sonidoPagina.volume = 0.6;
+sonidoPagina.preload = 'auto';
+
+var musicaFondo = new Audio('audios/musica.mp3');
+musicaFondo.loop = true;
+musicaFondo.volume = 0.25; // Volumen suave para no tapar la conversación en la mesa
+musicaFondo.preload = 'auto';
+
+var musicaActiva = false;
+var silenciadaManualmente = false;
+
+// 2. Crear botón flotante para encender o silenciar la música
+if (!document.getElementById('btn-musica')) {
+  var btnMusica = document.createElement('button');
+  btnMusica.id = 'btn-musica';
+  btnMusica.type = 'button';
+  btnMusica.textContent = '🔇 Música';
+  document.body.appendChild(btnMusica);
+
+  btnMusica.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (musicaActiva) {
+      musicaFondo.pause();
+      musicaActiva = false;
+      silenciadaManualmente = true;
+      btnMusica.textContent = '🔇 Música';
+    } else {
+      musicaFondo.play().then(function () {
+        musicaActiva = true;
+        silenciadaManualmente = false;
+        btnMusica.textContent = '🔊 Música';
+      }).catch(function () {});
+    }
+  });
+}
+
+// 3. Disparar el paso de página en cada botón y activar música en el primer toque
+document.addEventListener('click', function (e) {
+  if (e.target.closest('#btn-musica')) return;
+
+  // Inicia la música automáticamente con el primer toque en pantalla
+  if (!musicaActiva && !silenciadaManualmente) {
+    musicaFondo.play().then(function () {
+      musicaActiva = true;
+      var btn = document.getElementById('btn-musica');
+      if (btn) btn.textContent = '🔊 Música';
+    }).catch(function () {});
+  }
+
+  // Reproduce el sonido de hoja cada vez que se presiona un botón de Twine
+  if (e.target.closest('tw-link')) {
+    sonidoPagina.currentTime = 0;
+    sonidoPagina.play().catch(function () {});
+  }
+}, true);
+
 :: StoryStylesheet [stylesheet]
 /* Estilo base de toda la historia */
 tw-story {
@@ -338,4 +397,25 @@ tw-story[tags~="meta"] .etiqueta {
 }
 tw-story[tags~="meta"] .botones tw-link {
   background-color: #0f766e;
+}
+
+/* Botón flotante para controlar la música */
+#btn-musica {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 9999;
+  background-color: rgba(28, 43, 45, 0.88);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 22px;
+  padding: 8px 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#btn-musica:hover {
+  background-color: rgba(28, 43, 45, 1);
 }
