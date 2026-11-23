@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificado — Guardián del Humedal (1991)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #0b4f5c 0%, #116d7e 55%, #0d4a57 100%);
+      font-family: Georgia, "Times New Roman", serif;
+      color: #1c2b2d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px 40px;
+    }
+
+    /* Barra superior para personalizar el nombre */
+    .panel-control {
+      width: 100%;
+      max-width: 620px;
+      background: rgba(11, 45, 53, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .panel-control label {
+      width: 100%;
+      text-align: center;
+      font-size: 13px;
+      color: #d7f2f6;
+      letter-spacing: 0.4px;
+    }
+
+    .panel-control input {
+      flex: 1 1 210px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 2px solid #15899e;
+      background: #fdfbf5;
+      color: #1c2b2d;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .panel-control input:focus {
+      border-color: #d4a017;
+    }
+
+    .btn-descargar {
+      padding: 11px 18px;
+      border: none;
+      border-radius: 8px;
+      background: #d4a017;
+      color: #1c1917;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .btn-descargar:hover {
+      background: #e3b22b;
+      transform: translateY(-1px);
+    }
+
+    /* Tarjeta del certificado (estética novela gráfica + diploma) */
+    .certificado {
+      width: 100%;
+      max-width: 620px;
+      background: #fbf8f0;
+      border: 5px solid #1c2b2d;
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.42);
+    }
+
+    .marco-dorado {
+      border: 3px double #c8961e;
+      border-radius: 8px;
+      padding: 32px 28px 26px;
+      text-align: center;
+      position: relative;
+      background: radial-gradient(circle at top center, #eefaf9 0%, #fbf8f0 48%);
+    }
+
+    /* Esquinas decorativas */
+    .esquina {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border-color: #15899e;
+      border-style: solid;
+    }
+    .esquina.tl { top: 8px; left: 8px; border-width: 3px 0 0 3px; }
+    .esquina.tr { top: 8px; right: 8px; border-width: 3px 3px 0 0; }
+    .esquina.bl { bottom: 8px; left: 8px; border-width: 0 0 3px 3px; }
+    .esquina.br { bottom: 8px; right: 8px; border-width: 0 3px 3px 0; }
+
+    .emblema {
+      width: 86px;
+      height: 86px;
+      margin: 0 auto 12px;
+      display: block;
+    }
+
+    .encabezado {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2.2px;
+      color: #0f697a;
+      margin-bottom: 10px;
+    }
+
+    .titulo {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(26px, 6vw, 38px);
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      color: #163035;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .divisor {
+      width: 110px;
+      height: 4px;
+      background: linear-gradient(90deg, #15899e, #d4a017, #15899e);
+      margin: 14px auto 20px;
+      border-radius: 4px;
+    }
+
+    /* Nombre dinámico del ganador */
+    .bloque-ganador {
+      display: none;
+      margin-bottom: 20px;
+    }
+
+    .bloque-ganador.visible {
+      display: block;
+    }
+
+    .otorgado-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #5b6d70;
+      margin-bottom: 4px;
+    }
+
+    .nombre-ganador {
+      display: inline-block;
+      font-size: clamp(22px, 5vw, 30px);
+      font-style: italic;
+      font-weight: bold;
+      color: #0e5a6d;
+      border-bottom: 2px solid #d4a017;
+      padding: 0 14px 4px;
+    }
+
+    .cuerpo {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #263538;
+      font-style: italic;
+      max-width: 500px;
+      margin: 0 auto 28px;
+    }
+
+    /* Bloque de firma y sello */
+    .pie-firma {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .firma-box {
+      min-width: 220px;
+    }
+
+    .firma-trazo {
+      font-family: "Brush Script MT", "Segoe Script", Georgia, serif;
+      font-size: 28px;
+      color: #0f697a;
+      margin-bottom: 2px;
+    }
+
+    .linea-firma {
+      width: 230px;
+      height: 1.5px;
+      background: #1c2b2d;
+      margin: 4px auto 8px;
+    }
+
+    .firma-texto {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      color: #1c2b2d;
+      letter-spacing: 0.4px;
+    }
+
+    .sello {
+      width: 92px;
+      height: 92px;
+      flex-shrink: 0;
+    }
+
+    /* Dato legal al pie */
+    .dato-legal {
+      border-top: 1px dashed #9eb5b9;
+      padding-top: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #3f575c;
+      max-width: 490px;
+      margin: 0 auto;
+    }
+
+    .dato-legal strong {
+      color: #0f697a;
+    }
+
+    .enlace-volver {
+      margin-top: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+    }
+
+    .enlace-volver a {
+      color: #d7f2f6;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(215, 242, 246, 0.5);
+      padding-bottom: 2px;
+    }
+
+    .enlace-volver a:hover {
+      color: #ffffff;
+      border-bottom-color: #ffffff;
+    }
+
+    @media (max-width: 480px) {
+      .marco-dorado {
+        padding: 24px 16px 20px;
+      }
+      .cuerpo {
+        font-size: 16.5px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .panel-control,
+      .enlace-volver {
+        display: none;
+      }
+      .certificado {
+        box-shadow: none;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra para escribir el nombre del ganador y guardar imagen -->
+  <div class="panel-control">
+    <label for="inputNombre">Personaliza tu diploma escribiendo tu nombre (opcional):</label>
+    <input type="text" id="inputNombre" placeholder="Escribe tu nombre aquí..." maxlength="42">
+    <button type="button" class="btn-descargar" id="btnDescargar">Descargar PNG</button>
+  </div>
+
+  <!-- Certificado visual -->
+  <main class="certificado" aria-label="Certificado Guardián del Humedal">
+    <div class="marco-dorado">
+      <span class="esquina tl"></span>
+      <span class="esquina tr"></span>
+      <span class="esquina bl"></span>
+      <span class="esquina br"></span>
+
+      <!-- Emblema SVG de totoras del humedal y sol de 1991 -->
+      <svg class="emblema" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="60" cy="60" r="54" fill="#e4f7fa" stroke="#c8961e" stroke-width="3"/>
+        <circle cx="60" cy="46" r="18" fill="#f2c94c" opacity="0.85"/>
+        <!-- Agua del humedal -->
+        <path d="M16 82 Q38 74 60 82 T104 82 L104 94 A54 54 0 0 1 16 94 Z" fill="#15899e" opacity="0.28"/>
+        <path d="M22 86 Q42 80 60 86 T98 86" fill="none" stroke="#0f697a" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Hojas y totoras -->
+        <path d="M60 94 Q56 64 46 36" fill="none" stroke="#2d6a4f" stroke-width="3" stroke-linecap="round"/>
+        <path d="M60 94 Q64 62 74 38" fill="none" stroke="#2d6a4f" stroke-width="3" stroke-linecap="round"/>
+        <path d="M60 94 L60 28" fill="none" stroke="#1b4332" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M60 92 Q42 74 34 52" fill="none" stroke="#40916c" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M60 92 Q78 74 86 52" fill="none" stroke="#40916c" stroke-width="2.6" stroke-linecap="round"/>
+        <!-- Espigas de totora -->
+        <rect x="56.5" y="26" width="7" height="19" rx="3.5" fill="#6b4423"/>
+        <rect x="43" y="36" width="6" height="15" rx="3" transform="rotate(-14 46 43)" fill="#7c502b"/>
+        <rect x="71" y="37" width="6" height="15" rx="3" transform="rotate(14 74 44)" fill="#7c502b"/>
+      </svg>
+
+      <p class="encabezado">Salvando el humedal — Bogotá, 1991</p>
+      <h1 class="titulo">GUARDIÁN DEL HUMEDAL</h1>
+      <div class="divisor"></div>
+
+      <div class="bloque-ganador" id="bloqueGanador">
+        <p class="otorgado-label">Otorgado a</p>
+        <p class="nombre-ganador" id="textoGanador"></p>
+      </div>
+
+      <p class="cuerpo">
+        “Hoy el agua vuelve a correr limpia gracias a ti. No te rendiste ante los ductos tóxicos, supiste tomar decisiones valientes y demostraste que una comunidad unida es una comunidad más fuerte. Llegaste a 1991 y lograste que el humedal siga vivo.”
+      </p>
+
+      <div class="pie-firma">
+        <div class="firma-box">
+          <p class="firma-trazo">Elena</p>
+          <div class="linea-firma"></div>
+          <p class="firma-texto">Elena y la comunidad del humedal</p>
+        </div>
+
+        <!-- Sello dorado 1991 -->
+        <svg class="sello" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="Sello 1991 Artículo 79">
+          <circle cx="60" cy="60" r="52" fill="#fbf3db" stroke="#c8961e" stroke-width="3.5" stroke-dasharray="6 3"/>
+          <circle cx="60" cy="60" r="42" fill="none" stroke="#c8961e" stroke-width="2"/>
+          <text x="60" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#8a6208" letter-spacing="1">BOGOTÁ</text>
+          <text x="60" y="67" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#0f697a">1991</text>
+          <text x="60" y="83" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#8a6208" letter-spacing="1">ART. 79</text>
+        </svg>
+      </div>
+
+      <p class="dato-legal">
+        Amparado por el <strong>Derecho Colectivo a gozar de un ambiente sano</strong> (Art. 79, Constitución Política de 1991).
+      </p>
+    </div>
+  </main>
+
+  <p class="enlace-volver">
+    <a href="./index.html">← Volver a la historia del juego</a>
+  </p>
+
+  <script>
+    const inputNombre = document.getElementById('inputNombre');
+    const bloqueGanador = document.getElementById('bloqueGanador');
+    const textoGanador = document.getElementById('textoGanador');
+    const btnDescargar = document.getElementById('btnDescargar');
+
+    function actualizarNombre() {
+      const nombre = inputNombre.value.trim();
+      if (nombre) {
+        textoGanador.textContent = nombre;
+        bloqueGanador.classList.add('visible');
+      } else {
+        textoGanador.textContent = '';
+        bloqueGanador.classList.remove('visible');
+      }
+    }
+
+    inputNombre.addEventListener('input', actualizarNombre);
+
+    // Permite abrir con ?nombre=Juan para compartir prellenado
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('nombre')) {
+      inputNombre.value = params.get('nombre');
+      actualizarNombre();
+    }
+
+    // Dibuja texto con salto de línea automático en el canvas
+    function dibujarParrafo(ctx, texto, x, y, maxWidth, lineHeight) {
+      const palabras = texto.split(' ');
+      let linea = '';
+      let cursorY = y;
+
+      for (let i = 0; i < palabras.length; i++) {
+        const prueba = linea + palabras[i] + ' ';
+        if (ctx.measureText(prueba).width > maxWidth && i > 0) {
+          ctx.fillText(linea.trim(), x, cursorY);
+          linea = palabras[i] + ' ';
+          cursorY += lineHeight;
+        } else {
+          linea = prueba;
+        }
+      }
+      ctx.fillText(linea.trim(), x, cursorY);
+      return cursorY;
+    }
+
+    // Genera una imagen PNG lista para guardar en celular o PC
+    btnDescargar.addEventListener('click', () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = 1080;
+      canvas.height = 1440;
+      const ctx = canvas.getContext('2d');
+
+      // Fondo turquesa exterior
+      const bgGrad = ctx.createLinearGradient(0, 0, 1080, 1440);
+      bgGrad.addColorStop(0, '#0b4f5c');
+      bgGrad.addColorStop(0.55, '#116d7e');
+      bgGrad.addColorStop(1, '#0d4a57');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, 1080, 1440);
+
+      // Tarjeta papel marfil
+      ctx.fillStyle = '#fbf8f0';
+      ctx.strokeStyle = '#1c2b2d';
+      ctx.lineWidth = 10;
+      ctx.fillRect(65, 65, 950, 1310);
+      ctx.strokeRect(65, 65, 950, 1310);
+
+      // Marco interior dorado doble
+      ctx.strokeStyle = '#c8961e';
+      ctx.lineWidth = 4;
+      ctx.strokeRect(92, 92, 896, 1256);
+      ctx.lineWidth = 2;
+      ctx.strokeRect(104, 104, 872, 1232);
+
+      // Emblema circular superior
+      ctx.beginPath();
+      ctx.arc(540, 225, 72, 0, Math.PI * 2);
+      ctx.fillStyle = '#e4f7fa';
+      ctx.fill();
+      ctx.lineWidth = 4;
+      ctx.strokeStyle = '#c8961e';
+      ctx.stroke();
+
+      // Sol
+      ctx.beginPath();
+      ctx.arc(540, 206, 24, 0, Math.PI * 2);
+      ctx.fillStyle = '#f2c94c';
+      ctx.fill();
+
+      // Totoras estilizadas
+      ctx.strokeStyle = '#1b4332';
+      ctx.lineWidth = 5;
+      ctx.beginPath();
+      ctx.moveTo(540, 278); ctx.lineTo(540, 182);
+      ctx.moveTo(540, 278); ctx.quadraticCurveTo(532, 232, 516, 195);
+      ctx.moveTo(540, 278); ctx.quadraticCurveTo(548, 232, 564, 195);
+      ctx.stroke();
+
+      ctx.fillStyle = '#6b4423';
+      ctx.fillRect(535, 178, 10, 28);
+      ctx.fillRect(512, 194, 9, 22);
+      ctx.fillRect(559, 194, 9, 22);
+
+      // Encabezado
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#0f697a';
+      ctx.font = 'bold 24px Arial, Helvetica, sans-serif';
+      ctx.fillText('SALVANDO EL HUMEDAL — BOGOTÁ, 1991', 540, 355);
+
+      // Título
+      ctx.fillStyle = '#163035';
+      ctx.font = 'bold 64px Georgia, serif';
+      ctx.fillText('GUARDIÁN DEL HUMEDAL', 540, 445);
+
+      // Línea divisoria dorada
+      const divGrad = ctx.createLinearGradient(420, 480, 660, 480);
+      divGrad.addColorStop(0, '#15899e');
+      divGrad.addColorStop(0.5, '#d4a017');
+      divGrad.addColorStop(1, '#15899e');
+      ctx.fillStyle = divGrad;
+      ctx.fillRect(420, 476, 240, 6);
+
+      const nombre = inputNombre.value.trim();
+      let cuerpoY = 585;
+
+      if (nombre) {
+        ctx.fillStyle = '#5b6d70';
+        ctx.font = 'bold 20px Arial, Helvetica, sans-serif';
+        ctx.fillText('OTORGADO A', 540, 545);
+
+        ctx.fillStyle = '#0e5a6d';
+        ctx.font = 'italic bold 48px Georgia, serif';
+        ctx.fillText(nombre, 540, 608);
+
+        ctx.fillStyle = '#d4a017';
+        const anchoNombre = Math.min(ctx.measureText(nombre).width + 60, 720);
+        ctx.fillRect(540 - anchoNombre / 2, 624, anchoNombre, 4);
+
+        cuerpoY = 710;
+      }
+
+      // Cuerpo del mensaje
+      ctx.fillStyle = '#263538';
+      ctx.font = 'italic 32px Georgia, serif';
+      const textoCuerpo = '“Hoy el agua vuelve a correr limpia gracias a ti. No te rendiste ante los ductos tóxicos, supiste tomar decisiones valientes y demostraste que una comunidad unida es una comunidad más fuerte. Llegaste a 1991 y lograste que el humedal siga vivo.”';
+      dibujarParrafo(ctx, textoCuerpo, 540, cuerpoY, 760, 52);
+
+      // Firma izquierda
+      ctx.fillStyle = '#0f697a';
+      ctx.font = 'italic 46px Georgia, serif';
+      ctx.fillText('Elena', 390, 1085);
+
+      ctx.fillStyle = '#1c2b2d';
+      ctx.fillRect(225, 1102, 330, 3);
+
+      ctx.font = 'bold 22px Arial, Helvetica, sans-serif';
+      ctx.fillText('Elena y la comunidad del humedal', 390, 1138);
+
+      // Sello dorado derecho
+      ctx.beginPath();
+      ctx.arc(760, 1090, 78, 0, Math.PI * 2);
+      ctx.fillStyle = '#fbf3db';
+      ctx.fill();
+      ctx.lineWidth = 5;
+      ctx.strokeStyle = '#c8961e';
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(760, 1090, 64, 0, Math.PI * 2);
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      ctx.fillStyle = '#8a6208';
+      ctx.font = 'bold 18px Arial, Helvetica, sans-serif';
+      ctx.fillText('BOGOTÁ', 760, 1065);
+      ctx.fillStyle = '#0f697a';
+      ctx.font = 'bold 34px Georgia, serif';
+      ctx.fillText('1991', 760, 1102);
+      ctx.fillStyle = '#8a6208';
+      ctx.font = 'bold 18px Arial, Helvetica, sans-serif';
+      ctx.fillText('ART. 79', 760, 1130);
+
+      // Dato legal al pie
+      ctx.strokeStyle = '#9eb5b9';
+      ctx.lineWidth = 2;
+      ctx.setLineDash([8, 6]);
+      ctx.beginPath();
+      ctx.moveTo(180, 1225);
+      ctx.lineTo(900, 1225);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      ctx.fillStyle = '#3f575c';
+      ctx.font = '22px Arial, Helvetica, sans-serif';
+      dibujarParrafo(
+        ctx,
+        'Amparado por el Derecho Colectivo a gozar de un ambiente sano (Art. 79, Constitución Política de 1991).',
+        540,
+        1272,
+        740,
+        34
+      );
+
+      // Descarga
+      const link = document.createElement('a');
+      link.download = nombre
+        ? 'guardian-del-humedal-' + nombre.toLowerCase().replace(/[^a-z0-9]+/gi, '-') + '.png'
+        : 'certificado-guardian-del-humedal.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+  </script>
+</body>
+</html>
